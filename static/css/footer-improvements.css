@@ -1,0 +1,163 @@
+/* Footer Improvements - Legal Disclaimer and Responsiveness */
+
+.legal-disclaimer-collapse button {
+    background: none;
+    border: none;
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.legal-disclaimer-collapse button:hover {
+    color: #3b82f6;
+}
+
+.legal-disclaimer-collapse button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.legal-disclaimer-collapse .bi-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.legal-disclaimer-collapse button[aria-expanded="true"] .bi-chevron-down {
+    transform: rotate(180deg);
+}
+
+.legal-disclaimer {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #3b82f6;
+}
+
+.legal-disclaimer p {
+    font-size: 0.85rem;
+    color: #475569;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.theme-basic-footer .footer-intro p {
+    margin-bottom: 1rem;
+}
+
+.theme-basic-footer .logo-img {
+    display: block;
+    height: 60px;
+    width: 60px;
+    max-width: 220px;
+    max-height: 220px;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+    overflow: visible;
+}
+.theme-basic-footer .logo {
+    overflow: visible !important;
+}
+.theme-basic-footer .logo a {
+    overflow: visible !important;
+}
+
+.theme-basic-footer .logo-img:hover {
+    opacity: 0.9;
+}
+
+.theme-basic-footer .footer-intro .legal-disclaimer {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+/* Responsive adjustments for footer */
+@media (max-width: 991px) {
+    .legal-disclaimer-collapse button {
+        font-size: 0.9rem;
+    }
+    
+    .legal-disclaimer {
+        padding: 1.25rem;
+        font-size: 0.8rem;
+    }
+    
+    .theme-basic-footer .footer-intro {
+        margin-bottom: 30px;
+    }
+    
+    .theme-basic-footer .footer-title {
+        margin-top: 20px;
+    }
+    
+    .theme-basic-footer .footer-title.mt-30 {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .legal-disclaimer-collapse button {
+        font-size: 0.85rem;
+    }
+    
+    .legal-disclaimer {
+        padding: 1rem;
+        font-size: 0.75rem;
+        line-height: 1.6;
+    }
+    
+    .theme-basic-footer .logo-img {
+        max-height: 50px;
+        max-width: 180px;
+    }
+    
+    .theme-basic-footer .footer-intro p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .theme-basic-footer .footer-nav-link a {
+        font-size: 15px;
+        line-height: 36px;
+    }
+    
+    .bottom-footer .copyright {
+        font-size: 0.8rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 575px) {
+    .legal-disclaimer-collapse button {
+        font-size: 0.8rem;
+    }
+    
+    .legal-disclaimer {
+        padding: 0.875rem;
+        font-size: 0.7rem;
+        line-height: 1.5;
+    }
+    
+    .theme-basic-footer .logo-img {
+        max-height: 45px;
+        max-width: 160px;
+    }
+    
+    .theme-basic-footer .footer-intro p {
+        font-size: 14px;
+    }
+    
+    .bottom-footer .copyright {
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    
+    .bottom-footer .copyright a {
+        word-break: break-all;
+    }
+}
+

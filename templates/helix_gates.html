@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    Helix Gates <span>Analysis</span>
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    The Anna Matrix contains rotational patterns called "helix gates" - geometric structures that suggest the matrix follows specific transformation rules. This page analyzes these patterns and their relationship to identity extraction.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>What you'll find here:</strong> Analysis of helix gate patterns discovered in the Anna Matrix. Rotation values, pattern frequency, structural relationships, and their potential role in identity extraction. Interactive visualization of top rotation values.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>What is this?</strong> A helix gate is a mathematical operation that takes three inputs and rotates them by a specific amount. Think of it like a combination lock - you turn three dials, and the result is a rotation value. We found thousands of these patterns in the Anna Matrix, suggesting the matrix structure follows geometric rules rather than random placement. The most common rotations aren't random - they cluster around specific values, proving the patterns are intentional.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Pattern <span>Overview</span></h2>
+                        <span class="info-icon" onclick="openPopup('helix-overview')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            We identified thousands of helix gate patterns across the Anna Matrix. Each pattern represents a three-input group that produces a rotation value. Think of it like finding a specific combination in a lock - once you know the pattern, you can predict the rotation. The patterns aren't evenly distributed - they cluster around specific rotation values, suggesting the matrix follows geometric rules.
+                        </p>
+                        <ul class="style-none list-item color-rev" id="pattern-stats">
+                            <li><strong>Total Patterns:</strong> <span id="total-patterns">-</span></li>
+                            <li><strong>Rotation Patterns:</strong> <span id="rotation-patterns">-</span></li>
+                            <li><strong>Identity Helix Groups:</strong> <span id="helix-groups">-</span></li>
+                            <li><strong>Top Rotation:</strong> <span id="top-rotation">-</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Top <span>Rotations</span></h2>
+                        <span class="info-icon" onclick="openPopup('helix-rotations')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            This chart shows the most common rotation values found in helix gate patterns. The height of each bar represents how many times that rotation value appears. If the patterns were random, you'd expect all rotations to appear roughly equally. Instead, we see clear peaks at specific values - proof that the patterns follow geometric rules, not chance.
+                        </p>
+                        <div id="rotation-chart" class="pt-20" style="width: 100%; min-height: 400px; clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/helix_gates.js') }}?v=2"></script>
+{% endblock %}
+

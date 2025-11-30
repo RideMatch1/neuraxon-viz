@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    ML Position 27 <span>Results</span>
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    We used machine learning to predict one specific character in Qubic identities. Think of it like teaching a computer to recognize patterns - we showed it thousands of examples, and it learned to spot the pattern. The results prove the pattern is real, not random.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>What you'll find here:</strong> Model performance metrics, feature importance analysis, and statistical validation. We compared the machine learning model against simple baseline methods to prove it actually learned something useful. All data comes from the same {{ "{:,}".format(stats.onchain_verified|int) }} verified identities used in our main discovery.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>What is this?</strong> We focused on one specific position (position 27) in the Qubic identity. Why? Because it showed the strongest pattern. We trained a machine learning model to predict this character, and it achieved {{ "%.2f"|format(stats.ml_accuracy|float) }}% accuracy - way better than random guessing (3.85%) or simple baseline methods ({{ "%.2f"|format(stats.baseline_accuracy|float) }}%). This proves the pattern is real and learnable.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 md-pt-30 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Accuracy <span>Results</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-significance')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            The machine learning model achieved {{ "%.2f"|format(stats.ml_accuracy|float) }}% accuracy. That's like getting {{ "%.0f"|format(stats.ml_accuracy|float) }} out of 100 predictions correct. The best simple method only gets {{ "%.2f"|format(stats.baseline_accuracy|float) }}% - that's like getting {{ "%.0f"|format(stats.baseline_accuracy|float) }} out of 100 correct. The machine learning model is {{ "%.0f"|format((stats.ml_accuracy / stats.baseline_accuracy * 100)|float) }}% better. Think of it like racing: we're not just saying "it's fast" - we're showing you it beats the other methods by a clear margin.
+                        </p>
+                        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7; margin-bottom: 1rem;">
+                            <strong>Simple comparison:</strong> If you had to guess a letter 100 times, random guessing would get you about 4 correct (3.85%). The best simple method gets about {{ "%.0f"|format(stats.baseline_accuracy|float) }} correct. The machine learning model gets about {{ "%.0f"|format(stats.ml_accuracy|float) }} correct. That's a big difference!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Training <span>Configuration</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-training')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            We trained a machine learning model on {{ "{:,}".format(stats.onchain_verified|int) }} verified identities. Think of it like teaching a computer to recognize patterns: we showed it thousands of examples, and it learned to spot the patterns. It's like showing someone thousands of photos of cats and dogs - after a while, they learn to tell the difference. We used 112 different clues (like positions in the seed, values in the grid, and block positions) to help the computer learn.
+                        </p>
+                        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7; margin-bottom: 1rem;">
+                            <strong>How it works:</strong> We took {{ "{:,}".format(stats.onchain_verified|int) }} identities and split them into two groups. We used 80% to teach the computer (like showing it the answers), and 20% to test it (like a final exam). The computer learned from the training group, then we tested it on the test group to see how well it learned.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-nineteen position-relative pt-50 lg-pt-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Algorithm <span>Performance</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-model-comparison')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            This chart compares the machine learning model against the best simple method. The taller the bar, the better the accuracy. Think of it like a race: the blue bar (machine learning) is clearly ahead of the grey bar (simple method). The gap between them shows how much the model learned - it's not just slightly better, it's significantly better. It's like comparing a professional runner to someone jogging - there's a clear difference.
+                        </p>
+                        <div id="model-comparison-chart" class="pt-20" style="width: 100%; min-height: 400px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-50 md-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Top <span>Features</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-feature-importance')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            This chart shows which clues the model considers most important for making predictions. The longer the bar, the more important that clue is. Think of it like a detective case: some clues are more important than others. The model learned that positions near Position 27 are the most important clues - like a detective finding that fingerprints are more important than shoe size. This shows the model learned real patterns, not random noise.
+                        </p>
+                        <div id="feature-importance-chart" class="pt-20" style="width: 100%; min-height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-twenty position-relative mt-50 pb-50 lg-mt-40 lg-pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="limitation-card" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Baseline <span>Methods</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-baselines')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">
+                            To prove the machine learning model is actually learning something useful, we compared it to simple methods anyone could try. Think of it like racing: we're not just saying "it's fast" - we're showing you it beats the other methods. It's like comparing a professional chef to someone following a simple recipe - both can cook, but one is clearly better.
+                        </p>
+                        <ul class="style-none list-item">
+                            <li><strong>Random guessing:</strong> 3.85% - Like closing your eyes and picking a letter</li>
+                            <li><strong>Simple pattern method:</strong> ~25% - Like following a basic rule</li>
+                            <li><strong>Best simple method:</strong> {{ "%.2f"|format(stats.baseline_accuracy|float) }}% - Like using a good recipe</li>
+                            <li><strong>Machine learning:</strong> {{ "%.2f"|format(stats.ml_accuracy|float) }}% - Like a professional chef</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="limitation-card" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Significance <span>Tests</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-significance')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">
+                            Statistical tests confirm that the model's improvement over baselines is not due to chance. Think of it like this: if you flip a coin 100 times and get 60 heads, is that luck or a rigged coin? We ran statistical tests and proved it's not luck - the pattern is real. It's like testing a new medicine: we don't just say "it works" - we prove it works better than a placebo.
+                        </p>
+                        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.7; margin-bottom: 1rem;">
+                            <strong>What this means:</strong> The improvement is real and reliable. We tested it multiple times (like running the same race 5 times) and got similar results each time. This proves the model learned something real, not just memorized examples.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    window.mlStats = {
+        ml_accuracy: {{ stats.ml_accuracy|float }},
+        ml_cv_mean: {{ stats.ml_cv_mean|float }},
+        ml_cv_std: {{ stats.ml_cv_std|float }},
+        baseline_accuracy: {{ stats.baseline_accuracy|float }},
+        improvement_over_baseline: {{ stats.improvement_over_baseline|float }},
+        confidence_95_lower: {{ stats.confidence_95_lower|float }},
+        confidence_95_upper: {{ stats.confidence_95_upper|float }},
+        confidence_99_lower: {{ stats.confidence_99_lower|float }},
+        confidence_99_upper: {{ stats.confidence_99_upper|float }},
+        cohens_h: {{ stats.cohens_h|float }}
+    };
+</script>
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/ml_position27.js') }}?v=3"></script>
+{% endblock %}
+

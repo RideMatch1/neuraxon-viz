@@ -1,0 +1,149 @@
+/* Index.html Specific Fixes */
+
+/* Hero Section - Bild und Text klar trennen */
+.hero-banner-five .container .row {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner-five .container .row > div {
+    max-width: 60%;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-banner-five .illustration-holder {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40%;
+    max-width: 500px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-banner-five .illustration-holder .main-illustration {
+    max-width: 100%;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Button Styling - ohne radialen Effekt und ohne Hover */
+.hero-banner-five .demo-btn,
+.hero-banner-five .ripple-btn {
+    background: #3b82f6 !important;
+    color: #ffffff !important;
+    border: 2px solid #3b82f6 !important;
+    transition: none !important;
+    box-shadow: none !important;
+    position: relative;
+    overflow: visible !important;
+}
+
+.hero-banner-five .demo-btn::before,
+.hero-banner-five .demo-btn::after,
+.hero-banner-five .ripple-btn::before,
+.hero-banner-five .ripple-btn::after {
+    display: none !important;
+    content: none !important;
+}
+
+.hero-banner-five .demo-btn:hover,
+.hero-banner-five .ripple-btn:hover {
+    background: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.hero-banner-five .demo-btn[style*="transparent"],
+.hero-banner-five .ripple-btn[style*="transparent"] {
+    background: transparent !important;
+    color: #3b82f6 !important;
+    border: 2px solid #3b82f6 !important;
+}
+
+.hero-banner-five .demo-btn[style*="transparent"]:hover,
+.hero-banner-five .ripple-btn[style*="transparent"]:hover {
+    background: transparent !important;
+    color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Ripple-Effekt komplett entfernen - global */
+.ripple-btn::before,
+.ripple-btn::after,
+.demo-btn.ripple-btn::before,
+.demo-btn.ripple-btn::after {
+    display: none !important;
+    content: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Counter Section Links - schöne einfache Links statt Buttons */
+.counter-link {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.counter-link:hover {
+    color: #ffffff !important;
+    border-bottom-color: rgba(255, 255, 255, 0.8);
+    padding-bottom: 0.3rem;
+}
+
+.counter-section-one .demo-btn {
+    display: none !important;
+}
+
+/* Responsive Hero */
+@media (max-width: 991px) {
+    .hero-banner-five .container .row > div {
+        max-width: 100%;
+    }
+    
+    .hero-banner-five .illustration-holder {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 40px;
+        text-align: center;
+    }
+}
+
+/* Counter Animation Fix */
+.counter-section-one .counter {
+    display: inline-block;
+}
+
+/* Research Highlights Cards Hover */
+.block-style-twelve {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.block-style-twelve:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.block-style-twelve .more-btn {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.block-style-twelve:hover .more-btn {
+    transform: translateX(5px);
+    color: #3b82f6;
+}

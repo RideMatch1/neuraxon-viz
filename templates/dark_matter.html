@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    26 Zeros <span>(Dark Matter)</span>
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    In a 16,384-cell matrix, we found exactly 26 cells with zero values. This isn't random - the probability of this happening by chance is astronomically small. These "dark matter" cells appear to be control neurons that coordinate the matrix structure.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>What you'll find here:</strong> Analysis of the 26 zero-value cells in the Anna Matrix. Zero coordinates, proximity patterns to identity regions, statistical significance, and their potential role as control neurons. The probability of finding exactly 26 zeros by chance is approximately 10⁻³².
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>What is this?</strong> Imagine you have a 16,384-cell grid, and you're looking for cells with zero values. If the grid were random, you'd expect about 4,096 zeros (25% of cells). Instead, we found exactly 26 zeros - that's 0.16% of the matrix. The probability of this happening by chance is about 10⁻³² (that's 0.00000000000000000000000000000001). This is so unlikely that it proves the zeros are intentional, not accidental. We call them "dark matter" because they're invisible but control the structure, like dark matter in physics controls galaxies.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Zero <span>Coordinates</span></h2>
+                        <span class="info-icon" onclick="openPopup('dark-matter-coords')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            We've identified the exact locations of 20 out of 26 zero-value cells in the matrix. These zeros aren't randomly scattered - they cluster in specific regions, suggesting they serve a structural purpose. Think of them like control points in a building - they're strategically placed to coordinate the overall structure.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Total Zeros:</strong> <span id="zero-count">-</span></li>
+                            <li><strong>Known Coordinates:</strong> <span id="known-zeros">-</span> of <span id="total-zeros">-</span></li>
+                            <li><strong>Identified as Control Neurons:</strong> <span id="control-neurons">-</span></li>
+                            <li><strong>Function:</strong> Control neurons (dark matter)</li>
+                        </ul>
+                        
+                        <h5 class="pt-30" style="margin-top: 1.5rem; margin-bottom: 1rem;">Proximity to Identity Regions</h5>
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">
+                            Many zeros are located near regions where we extract identities, suggesting they coordinate identity extraction:
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Close:</strong> <span id="proximity-close">-</span> zeros</li>
+                            <li><strong>Medium:</strong> <span id="proximity-medium">-</span> zeros</li>
+                            <li><strong>Far:</strong> <span id="proximity-far">-</span> zeros</li>
+                        </ul>
+                        
+                        <h5 class="pt-30" style="margin-top: 1.5rem; margin-bottom: 1rem;">Statistical Significance</h5>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Probability (exactly 26):</strong> <span id="probability">-</span></li>
+                            <li><strong>Conclusion:</strong> Intentional design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Statistical <span>Anomaly</span></h2>
+                        <span class="info-icon" onclick="openPopup('dark-matter-anomaly')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            The exact count of 26 zeros is one of the strongest statistical anomalies we've found. If the matrix were random, we'd expect thousands of zeros. Finding exactly 26 is like flipping a coin 100 times and getting heads every single time - it's technically possible, but so unlikely that it proves the result is intentional.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Probability:</strong> <span id="anomaly-probability">-</span></li>
+                            <li><strong>Matrix Size:</strong> 16,384 cells</li>
+                            <li><strong>Expected Zeros (random):</strong> ~4,096 (25%)</li>
+                            <li><strong>Actual Zeros:</strong> Exactly 26 (0.16%)</li>
+                        </ul>
+                        
+                        <p class="pt-20" style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-top: 1.5rem; padding: 1rem; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #3b82f6;">
+                            The probability of exactly 26 zeros in a random 16,384-cell matrix is approximately 10⁻³². This is stronger than any standard statistical significance threshold and confirms intentional design rather than random distribution.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/dark_matter.js') }}?v=1"></script>
+{% endblock %}
+

@@ -1,0 +1,166 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    Identity <span>Discrepancy</span> Analysis
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    When we compare the identities we found with the ones documented in the matrix, we discovered something surprising: they're all different. Every single one. This page analyzes why this happens and what it means for understanding how identities are created.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>What you'll find here:</strong> Analysis of the 100% mismatch rate between documented identities and real derived identities. Character differences, position patterns, and seed analysis showing how the transformation function works. All findings are based on systematic comparison of all discovered identities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>What is this?</strong> When we extract identities from the Anna Matrix, we get one set of identities. But when we look at what's documented in the matrix itself, we see different identities. Think of it like this: if you have a recipe that says "use sugar" but you actually use honey, the result will be different. Same here - the simple formula we used is an approximation, not the exact transformation. This page shows what the differences are and what patterns we found.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Key <span>Findings</span></h2>
+                        <span class="info-icon" onclick="openPopup('discrepancy-summary')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            When we compare all the identities we found with the documented ones, we discovered that every single one is different. Not a single match. This tells us that the simple formula we used is just an approximation - the real transformation is more complex.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Total Seeds:</strong> {{ stats.total_identities|int if stats.total_identities else 23765 }}</li>
+                            <li><strong>Total Real IDs:</strong> {{ stats.total_identities|int if stats.total_identities else 23765 }}</li>
+                            <li><strong>Total Doc IDs:</strong> {{ stats.total_identities|int if stats.total_identities else 23765 }}</li>
+                            <li><strong>Matches:</strong> 0 (0.0%)</li>
+                            <li><strong>Mismatches:</strong> {{ stats.total_identities|int if stats.total_identities else 23765 }} (100.0%)</li>
+                            <li><strong>Average Differences:</strong> ~20 characters per identity</li>
+                        </ul>
+                        
+                        <h5 class="pt-30" style="margin-top: 1.5rem; margin-bottom: 1rem;">Conclusion</h5>
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 0;">
+                            The simple formula we used is an approximation, not the true transformation function. The actual transformation is more complex and produces different results.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Character <span>Bias</span></h2>
+                        <span class="info-icon" onclick="openPopup('discrepancy-char-bias')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            Documented identities show a strong bias toward certain characters (like 'A' and 'M'), while real identities are more evenly distributed. Think of it like this: if you're rolling dice and always get the same numbers, something's not random. Same here - the documented identities aren't cryptographically random.
+                        </p>
+                        <h5 style="margin-top: 1.5rem; margin-bottom: 1rem;">Documented IDs</h5>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>A:</strong> 9,698 occurrences</li>
+                            <li><strong>M:</strong> 4,616 occurrences</li>
+                            <li><strong>C:</strong> 3,672 occurrences</li>
+                        </ul>
+                        
+                        <h5 class="pt-30" style="margin-top: 1.5rem; margin-bottom: 1rem;">Real IDs</h5>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>A:</strong> 2,943 occurrences</li>
+                            <li><strong>C:</strong> 2,943 occurrences</li>
+                            <li><strong>B:</strong> 2,877 occurrences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-nineteen position-relative pt-50 lg-pt-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Character Difference <span>Distribution</span></h2>
+                        <span class="info-icon" onclick="openPopup('discrepancy-pos-diff')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            This chart shows where the differences occur. The first 20 positions have the most differences - around 950-970 per position. After position 20, the differences drop significantly. This pattern isn't random - it suggests the transformation function affects the first 20 positions more strongly.
+                        </p>
+                        <div id="position-differences-chart" class="pt-20" style="width: 100%; min-height: 500px; clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Common <span>Patterns</span></h2>
+                        <span class="info-icon" onclick="openPopup('discrepancy-seed-patterns')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            When we look at the seeds (the original data), we find many repeating patterns like "aaa" and "mmm". Think of it like this: if you're writing random letters, you wouldn't expect to see "aaa" over 1,000 times. This suggests the seeds aren't randomly created - they follow some systematic pattern.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>'aaa':</strong> 1,262 occurrences</li>
+                            <li><strong>'aaaa':</strong> 546 occurrences</li>
+                            <li><strong>'ama':</strong> 401 occurrences</li>
+                            <li><strong>'mmm':</strong> 376 occurrences</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Systematic <span>Differences</span></h2>
+                        <span class="info-icon" onclick="openPopup('discrepancy-sys-diff')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            The differences aren't random - they follow a clear pattern. The first 20 positions have the most differences (around 950-970 per position), while positions after 20 have significantly fewer. This pattern suggests the transformation function affects the beginning of the identity more strongly than the end.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Positions 0-19:</strong> ~950-970 differences per position</li>
+                            <li><strong>Positions 20+:</strong> Significantly fewer differences</li>
+                            <li><strong>Pattern:</strong> Not random - suggests intentional design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/discrepancy.js') }}?v=2"></script>
+{% endblock %}
+

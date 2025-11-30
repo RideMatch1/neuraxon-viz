@@ -1,0 +1,73 @@
+<header class="theme-main-menu sticky-menu theme-menu-four">
+    <div class="inner-content">
+        <div class="d-flex align-items-center justify-content-between w-100">
+            <div class="logo order-lg-0" style="display: block !important; visibility: visible !important; position: relative !important; z-index: 1000 !important;">
+                <a href="{{ url_for('index') }}" class="d-block logo-link" style="display: block !important; line-height: 0 !important; text-decoration: none !important;">
+                    <img src="{{ url_for('static', filename='images/logo/anna_matrix_lab_logo.png') }}?v={{ timestamp }}" alt="Anna Matrix Lab" class="logo-img" style="height: 50px !important; width: 50px !important; max-width: 200px !important; max-height: 200px !important; object-fit: contain !important; display: block !important; visibility: visible !important; opacity: 1 !important; position: relative !important; z-index: 1001 !important; margin: 0 !important; padding: 0 !important;">
+                </a>
+            </div>
+
+            <nav class="navbar navbar-expand-lg order-lg-2">
+                <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="d-block d-lg-none">
+                            <div class="logo">
+                                <a href="{{ url_for('index') }}">
+                                    <img src="{{ url_for('static', filename='images/logo/anna_matrix_lab_logo.png') }}?v={{ timestamp }}" alt="Anna Matrix Lab" class="logo-img" style="height: 40px; width: 40px; max-width: 180px; max-height: 180px; object-fit: contain; display: block;">
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item {% if request.endpoint == 'index' %}active{% endif %}">
+                            <a class="nav-link" href="{{ url_for('index') }}">
+                                <i class="bi bi-house-door me-1"></i> Home
+                            </a>
+                        </li>
+                        <li class="nav-item {% if request.endpoint == 'visualization' %}active{% endif %}">
+                            <a class="nav-link" href="{{ url_for('visualization') }}">
+                                <i class="bi bi-diagram-3 me-1"></i> Visualization
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle {% if request.endpoint in ['explore', 'ml_position27'] %}active{% endif %}" href="#" id="exploreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-compass me-1"></i> Explore
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="exploreDropdown">
+                                <li><a class="dropdown-item {% if request.endpoint == 'explore' %}active{% endif %}" href="{{ url_for('explore') }}"><i class="bi bi-search me-2"></i> Anna Explorer</a></li>
+                                <li><a class="dropdown-item {% if request.endpoint == 'ml_position27' %}active{% endif %}" href="{{ url_for('ml_position27') }}"><i class="bi bi-cpu me-2"></i> ML Position 27</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle {% if request.endpoint in ['grid_structure', 'statistics', 'discrepancy', 'layers'] %}active{% endif %}" href="#" id="analysisDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-graph-up me-1"></i> Analysis
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="analysisDropdown">
+                                <li><a class="dropdown-item {% if request.endpoint == 'grid_structure' %}active{% endif %}" href="{{ url_for('grid_structure') }}"><i class="bi bi-grid-3x3 me-2"></i> Grid Structure</a></li>
+                                <li><a class="dropdown-item {% if request.endpoint == 'statistics' %}active{% endif %}" href="{{ url_for('statistics') }}"><i class="bi bi-bar-chart me-2"></i> Statistics</a></li>
+                                <li><a class="dropdown-item {% if request.endpoint == 'discrepancy' %}active{% endif %}" href="{{ url_for('discrepancy') }}"><i class="bi bi-arrow-left-right me-2"></i> Discrepancy</a></li>
+                                <li><a class="dropdown-item {% if request.endpoint == 'layers' %}active{% endif %}" href="{{ url_for('layers') }}"><i class="bi bi-stack me-2"></i> Layers</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle {% if request.endpoint in ['helix_gates', 'dark_matter', 'evolutionary'] %}active{% endif %}" href="#" id="researchDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i class="bi bi-flask me-1"></i> Research
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="researchDropdown">
+                                <li><a class="dropdown-item {% if request.endpoint == 'helix_gates' %}active{% endif %}" href="{{ url_for('helix_gates') }}"><i class="bi bi-arrow-repeat me-2"></i> Helix Gates</a></li>
+                                <li><a class="dropdown-item {% if request.endpoint == 'dark_matter' %}active{% endif %}" href="{{ url_for('dark_matter') }}"><i class="bi bi-circle me-2"></i> Dark Matter</a></li>
+                                <li><a class="dropdown-item {% if request.endpoint == 'evolutionary' %}active{% endif %}" href="{{ url_for('evolutionary') }}"><i class="bi bi-diagram-2 me-2"></i> Evolutionary</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item {% if request.endpoint == 'methodology' %}active{% endif %}">
+                            <a class="nav-link" href="{{ url_for('methodology') }}">
+                                <i class="bi bi-file-text me-1"></i> Methodology
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    Layer <span>Analysis</span>
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    The Anna Matrix doesn't just contain one layer of identities - it contains multiple layers, like an onion. Each layer is derived from the previous one, creating a deeper structure. This page shows how we discovered and analyzed all four layers.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>What you'll find here:</strong> Analysis of Layer-1 (primary extraction, 98.79% verified), Layer-2 (derived identities, 97.5% verified), Layer-3 (tested sample, 34% verified), and Layer-4 (deep layer, 0% verified). Interactive visualization showing how verification rates decrease with layer depth. <strong>Note:</strong> We are actively working on testing Layer-3 and Layer-4 with larger samples to improve statistical confidence and discover more valid identities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>What is this?</strong> Think of the Anna Matrix like an onion with multiple layers. Layer-1 is the outer layer - the identities we extract directly from the matrix. Layer-2 is the next layer - we take Layer-1 identities and transform them to create new identities. Layer-3 and Layer-4 go even deeper. The fascinating discovery: verification rates decrease as we go deeper (98.79% → 97.5% → 34% → 0%), suggesting each transformation step introduces some uncertainty. This proves the structure is hierarchical, not flat.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Primary <span>Extraction</span></h2>
+                        <span class="info-icon" onclick="openPopup('layers-layer1')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            Layer-1 is where it all starts - the identities we extract directly from the Anna Matrix using diagonal and vortex patterns. Think of it like the foundation of a building: it's the most solid layer. Out of 23,765 identities found, 23,470 are verified on-chain - that's 98.79%! This is the highest verification rate of all layers, proving these identities are the most reliable and directly connected to the matrix structure.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Identities Found:</strong> 23,765</li>
+                            <li><strong>On-Chain Verified:</strong> 23,470</li>
+                            <li><strong>Verification Rate:</strong> 98.79%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Derived <span>Identities</span></h2>
+                        <span class="info-icon" onclick="openPopup('layers-layer2')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            Layer-2 takes Layer-1 identities and transforms them to create new identities. Think of it like making a copy of a document, then making a copy of that copy - each step introduces a tiny bit of uncertainty. The verification rate drops slightly to 97.5% (22,889 out of 23,476), but it's still very high. This proves the transformation process works, but each step adds a small amount of error.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Identities Derived:</strong> 23,476</li>
+                            <li><strong>On-Chain Verified:</strong> 22,889</li>
+                            <li><strong>Verification Rate:</strong> 97.5%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Tested <span>Sample</span></h2>
+                        <span class="info-icon" onclick="openPopup('layers-layer3')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            Layer-3 goes even deeper. We tested 100 identities from this layer, and only 34 were verified on-chain (34% rate). This dramatic drop suggests Layer-3 identities may require different extraction methods, or transformation errors accumulate significantly at this depth. It's like trying to read a photocopy of a photocopy - the quality degrades with each step.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Tested:</strong> 100 identities</li>
+                            <li><strong>On-Chain Verified:</strong> 34</li>
+                            <li><strong>Verification Rate:</strong> 34.0%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Deep <span>Layer</span></h2>
+                        <span class="info-icon" onclick="openPopup('layers-layer4')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            Layer-4 is the deepest layer we tested. Out of 100 tested identities, zero were verified on-chain (0% rate). This suggests Layer-4 may not exist on-chain, requires completely different validation methods, or represents a theoretical layer beyond practical extraction. It's like trying to read a document that's been copied too many times - eventually, the information is lost.
+                        </p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Tested:</strong> 100 identities</li>
+                            <li><strong>On-Chain Verified:</strong> 0</li>
+                            <li><strong>Verification Rate:</strong> 0.0%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-nineteen position-relative pt-50 lg-pt-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Layer <span>Visualization</span></h2>
+                        <span class="info-icon" onclick="openPopup('layers-comparison')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            This chart shows all four layers side-by-side, comparing identity counts and verification rates. The blue bars show total identities, the green bars show verified identities, and the blue line shows the verification rate percentage. The pattern is clear: verification rates decrease exponentially with layer depth (98.79% → 97.5% → 34% → 0%), proving each transformation step introduces uncertainty. This isn't random - it's a systematic pattern that reveals the hierarchical structure of the Anna Matrix.
+                        </p>
+                        <div id="layer-comparison-chart" class="pt-20" style="width: 100%; min-height: 500px; clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/layers.js') }}?v=3"></script>
+{% endblock %}
