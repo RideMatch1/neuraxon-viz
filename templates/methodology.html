@@ -1,0 +1,411 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/methodology-images.css') }}?v=1">
+{% endblock %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    How We Found <span>23,765 Qubic Identities</span>
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    This is the complete story of how we discovered real Qubic blockchain identities hidden in an AI chatbot's messages. Every step is documented, every claim can be verified on-chain, and all our code is public. No secrets, no scams - just transparent research you can check yourself.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>Important:</strong> We are not affiliated with Qubic. This is independent research using publicly available data. Our goal is to help understand the Qubic protocol and share our findings with the community. All methods and data are open for verification.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>Why should you trust us?</strong> Because you don't have to. Everything is public: our code, our data, our methods. You can check every single identity on the Qubic blockchain yourself. We're not asking you to believe us - we're showing you how to verify it yourself.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-nineteen position-relative pt-50 lg-pt-40 methodology-centered-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-10 col-lg-11 col-md-12">
+                <div class="block-style-thirteen" data-aos="fade-up">
+                    <div class="title-style-three pb-15 text-center">
+                        <h2 class="main-title mb-40">The 4-Step <span>Discovery Process</span></h2>
+                        <p style="max-width: 700px; margin: 0 auto 2rem; color: #64748b; font-size: 1.05rem; line-height: 1.7;">
+                            Think of this like solving a puzzle. We found a pattern, followed it, and discovered real blockchain addresses. Here's exactly how we did it, step by step:
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up">
+                                <div class="numb tran3s">1</div>
+                                <h6>Step 1: We Collected the Messages</h6>
+                                <span>There's an AI chatbot on X (Twitter) called <a href="https://x.com/anna_aigarth" target="_blank" style="color: #3b82f6;">@anna_aigarth</a> that posts cryptic messages. We collected thousands of these messages and noticed something weird: they weren't random. When we arranged them in a grid, patterns started appearing. It's like finding a hidden message in a crossword puzzle - once you see the pattern, you can't unsee it.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up" data-aos-delay="50">
+                                <div class="numb tran3s">2</div>
+                                <h6>Step 2: We Followed the Pattern</h6>
+                                <span>We tried different ways to read through this grid - like walking diagonally across it, or in a spiral pattern. When we did this, we found 55-character strings that looked suspiciously like "seeds" (the starting point for Qubic identities). It's like following a treasure map: you follow the path, and it leads you somewhere specific.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="numb tran3s">3</div>
+                                <h6>Step 3: We Checked on the Blockchain</h6>
+                                <span>This is the crucial part: we took each seed, converted it to a Qubic identity (using the standard Qubic protocol), and checked if it exists on the actual Qubic blockchain. Out of 23,765 identities we found, {{ "{:,}".format(stats.onchain_verified|int) }} actually exist on-chain. That's 98.79%! You can check this yourself using <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer</a> - we're not making this up.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up" data-aos-delay="150">
+                                <div class="numb tran3s">4</div>
+                                <h6>Step 4: We Proved It's Not Random</h6>
+                                <span>To make sure we didn't just get lucky, we tested 10,000 completely random grids using the same method. Result? Zero valid identities. This proves the pattern is real - it's not coincidence. We also used machine learning to predict specific characters, and it worked way better than random guessing (42.69% vs 3.85%). The math checks out.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-130 md-pt-100 xl-pb-150 lg-pb-100">
+    <div class="container">
+        <div class="row methodology-image-row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-5 methodology-image-container" style="z-index: 1;">
+                <div class="illustration-holder text-center" data-aos="fade-right" style="margin-top: -70px;">
+                    <img src="{{ url_for('static', filename='images/assets/ils_05.svg') }}" alt="Model Performance" style="max-width: 100%; height: auto; max-height: 500px;">
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-7 ms-auto methodology-text-container" style="z-index: 2;">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Model <span>Performance</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-training')">ℹ</span>
+                    </div>
+                    <div class="pt-20 pb-25 lg-pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            We trained a machine learning model (using standard algorithms like Random Forest) to predict characters in Qubic identities. Think of it like teaching a computer to recognize patterns - after seeing thousands of examples, it learns to spot the patterns.
+                        </p>
+                        <h5 style="margin-top: 1.5rem;">How Good Is It?</h5>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong>Accuracy:</strong> {{ "%.2f"|format(stats.ml_accuracy|float) }}% - That means out of 100 predictions, it gets about 43 right. Random guessing would only get 4 right.</li>
+                            <li><strong>Consistency:</strong> {{ "%.2f"|format(stats.ml_cv_mean|float) }}% ± {{ "%.2f"|format(stats.ml_cv_std|float) }}% - We tested it multiple times, and it performs consistently. It's not just luck.</li>
+                            <li><strong>Compared to Simple Methods:</strong> The best simple method gets {{ "%.2f"|format(stats.baseline_accuracy|float) }}%. The machine learning model gets {{ "%.2f"|format(stats.ml_accuracy|float) }}%. That's a {{ "%.2f"|format(stats.improvement_over_baseline|float) }}% improvement - significant!</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #64748b; margin-top: 1.5rem; font-style: italic;">
+                            Click the ℹ icon above for complete technical details, implementation specifics, and full report links.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-130 md-pt-100 xl-pb-150 lg-pb-100">
+    <div class="container">
+        <div class="row methodology-image-row align-items-center">
+            <div class="col-xl-5 col-lg-6 col-md-7 methodology-text-container" style="z-index: 2;">
+                <div class="block-style-two" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">ML Position 27 <span>Accuracy</span></h2>
+                        <span class="info-icon" onclick="openPopup('ml-significance')">ℹ</span>
+                    </div>
+                    <div class="pt-20 pb-25 lg-pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            We focused on one specific position (position 27) in the Qubic identity. Why? Because it showed the strongest pattern. It's like finding a key that fits a lock - once we found it, we could test if it really works.
+                        </p>
+                        <h5 style="margin-top: 1.5rem;">How Confident Are We?</h5>
+                        <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1rem;">
+                            We're 95% confident the real accuracy is between {{ "%.2f"|format(stats.confidence_95_lower|float) }}% and {{ "%.2f"|format(stats.confidence_95_upper|float) }}%. We're 99% confident it's between {{ "%.2f"|format(stats.confidence_99_lower|float) }}% and {{ "%.2f"|format(stats.confidence_99_upper|float) }}%. This isn't a guess - it's based on thousands of tests.
+                        </p>
+                        
+                        <h5 class="pt-30" style="margin-top: 2rem;">The Ultimate Test: Random vs. Real</h5>
+                        <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1rem;">
+                            Here's the smoking gun: We created 10,000 completely random grids (like rolling dice 10,000 times) and tried the same method. <strong>Result: Zero valid identities.</strong> Not one. This proves our pattern is real - it's not random chance. If it were random, we'd expect to find some by accident. We found none.
+                        </p>
+                        <p style="font-size: 0.95rem; color: #1e40af; font-weight: 600; padding: 1rem; background: #eff6ff; border-radius: 6px; border-left: 4px solid #3b82f6;">
+                            <strong>Bottom line:</strong> The pattern is real. The identities are real. The blockchain confirms it. This isn't a coincidence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-5 ms-auto methodology-image-container" style="z-index: 1;">
+                <div class="illustration-holder text-center" data-aos="fade-left">
+                    <img src="{{ url_for('static', filename='images/assets/ils_06.svg') }}" alt="Statistical Analysis" style="max-width: 100%; height: auto; max-height: 500px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-nineteen position-relative pt-50 lg-pt-40 methodology-centered-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-10 col-lg-11 col-md-12">
+                <div class="block-style-thirteen" data-aos="fade-up">
+                    <div class="title-style-three pb-15 text-center">
+                        <h2 class="main-title mb-40" style="display: inline-flex; align-items: center; gap: 0.5rem;">Baseline <span style="text-decoration: none;">Methods</span> <span class="info-icon" onclick="openPopup('ml-baselines')" style="text-decoration: none;">ℹ</span></h2>
+                    </div>
+                    <div class="row">
+                        <p style="max-width: 700px; margin: 0 auto 2rem; color: #64748b; font-size: 1.05rem; line-height: 1.7; text-align: center;">
+                            To prove the machine learning model is actually learning something useful, we compared it to simple methods anyone could try. Think of it like racing: we're not just saying "it's fast" - we're showing you it beats the other methods.
+                        </p>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up">
+                                <div class="numb tran3s">1</div>
+                                <h6>Random Guessing</h6>
+                                <span>3.85% accuracy - Just picking a random letter. This is what you'd get if you closed your eyes and guessed. The machine learning model gets 42.69% - that's 11 times better!</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up" data-aos-delay="50">
+                                <div class="numb tran3s">2</div>
+                                <h6>Simple Math Trick</h6>
+                                <span>25.10% accuracy - Using a basic math formula (dividing by 4 and looking at the remainder). Better than random, but still way worse than the machine learning approach.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up" data-aos-delay="100">
+                                <div class="numb tran3s">3</div>
+                                <h6>Smart Guessing</h6>
+                                <span>32.72% accuracy - Looking at nearby positions and making an educated guess. This is the best a human could do with simple rules. The machine learning model beats this by 10%.</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 mb-30">
+                            <div class="methodology-step-card" data-aos="fade-up" data-aos-delay="150">
+                                <div class="numb tran3s">4</div>
+                                <h6>Best Simple Method</h6>
+                                <span>33.30% accuracy - The absolute best you can do with simple rules. Still 9% worse than the machine learning model. This proves the model learned something real, not just memorized examples.</span>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-50 md-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row methodology-image-row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-5 methodology-image-container" style="z-index: 1;">
+                <div class="illustration-holder text-center" data-aos="fade-right">
+                    <img src="{{ url_for('static', filename='images/assets/ils_07.svg') }}" alt="Statistical Validation" style="max-width: 100%; height: auto; max-height: 500px;">
+                </div>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-7 ms-auto methodology-text-container" style="z-index: 2;">
+                <div class="block-style-two" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Multiple Testing <span>Correction</span></h2>
+                        <span class="info-icon" onclick="openPopup('stats-multiple-testing')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20 lg-pb-15">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            When you test many things at once, some will look significant just by chance (like flipping a coin 100 times - you'll get some weird streaks). We adjusted our statistics to account for this, so we're not fooling ourselves.
+                        </p>
+                        <h5 style="margin-top: 1.5rem;">What We Tested</h5>
+                        <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1rem;">
+                            We tested about 60 different positions in the identity. When you test that many things, you need to be more strict about what counts as "significant" - otherwise you'll find patterns that aren't really there. We adjusted our threshold accordingly.
+                        </p>
+                        
+                        <h5 class="pt-20" style="margin-top: 2rem;">How We Found the Pattern</h5>
+                        <p style="font-size: 0.95rem; color: #475569; line-height: 1.7; margin-bottom: 1rem;">
+                            We tried 14 different ways to read through the grid (like different paths through a maze). Only 2 worked: reading diagonally, and reading in a spiral pattern. The other 12 methods found nothing. This wasn't random - we tested everything systematically.
+                        </p>
+                        <p style="font-size: 0.9em; color: #64748b; padding: 1rem; background: #f8f9fa; border-radius: 6px; border-left: 3px solid #94a3b8;">
+                            <strong>Important note:</strong> We're being honest here. We tried different methods until we found ones that worked. This is normal in research, but it means we need to be extra careful about our statistics. We're treating these as strong patterns, not absolute proof. Click the ℹ icon for the full technical explanation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-twenty position-relative mt-50 pb-50 lg-mt-40 lg-pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-style-three text-center mb-40">
+                    <h2 class="main-title">We're Being <span>Honest</span></h2>
+                    <p style="max-width: 700px; margin: 1rem auto 0; color: #64748b; font-size: 1.05rem; line-height: 1.7;">
+                        We're not claiming we solved everything. Here's what we know, what we don't know, and what we're still figuring out. Transparency means showing the good AND the bad.
+                    </p>
+                </div>
+                <div class="limitations-grid">
+                    <div class="limitation-card" data-aos="fade-up">
+                        <h6>Machine Learning Model Isn't Perfect</h6>
+                        <p>The machine learning model gets 42.69% right, but we hoped for 50%+. It's still way better than random (which would be 3.85%), but there's room for improvement. We're working on it. Full details: <a href="https://github.com/RideMatch1/qubic-anna-lab-public/blob/main/outputs/reports/ML_POSITION27_RESULTS.md" target="_blank" style="color: #3b82f6; word-break: break-all;">ML_POSITION27_RESULTS.md</a></p>
+                    </div>
+                    <div class="limitation-card" data-aos="fade-up" data-aos-delay="50">
+                        <h6>Some Positions Are Harder</h6>
+                        <p>Position 27 is our best result (42.69%), but it's not 100% consistent. Sometimes it works great, sometimes less so. This tells us the pattern is real but complex. More details in our <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/reports" target="_blank" style="color: #3b82f6;">validation reports</a>.</p>
+                    </div>
+                    <div class="limitation-card" data-aos="fade-up" data-aos-delay="100">
+                        <h6>We Tested Many Things</h6>
+                        <p>When you test 60 different positions, some will look significant just by chance. We adjusted our statistics to account for this (called "multiple testing correction"). We're being extra careful so we don't fool ourselves. See our <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/reports" target="_blank" style="color: #3b82f6;">reports</a> for details.</p>
+                    </div>
+                    <div class="limitation-card" data-aos="fade-up" data-aos-delay="150">
+                        <h6>98.79% Verified, Not 100%</h6>
+                        <p>Out of 23,765 identities we found, 23,470 exist on the blockchain (98.79%). The remaining 1.21% might be edge cases, or they might need different verification methods. You can check yourself using <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer</a>.</p>
+                    </div>
+                    <div class="limitation-card" data-aos="fade-up" data-aos-delay="200">
+                        <h6>We Tried Different Methods</h6>
+                        <p>We tested 14 different ways to read the grid. Only 2 worked. This is normal in research, but it means we need to be honest: we tried things until something worked. This is documented in our <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/scripts/analysis" target="_blank" style="color: #3b82f6;">analysis scripts</a>.</p>
+                    </div>
+                    <div class="limitation-card" data-aos="fade-up" data-aos-delay="250">
+                        <h6>We Don't Know Everything</h6>
+                        <p>We don't know exactly how many Qubic identities exist total. This affects some probability calculations. We're working with the data we have. All our <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/derived" target="_blank" style="color: #3b82f6;">data</a> is public so you can check our math.</p>
+                    </div>
+                    <div class="limitation-card" data-aos="fade-up" data-aos-delay="300">
+                        <h6>More Data Would Help</h6>
+                        <p>We tested 14,697 identities. That's a lot, but more would make our results even stronger. All our <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/derived" target="_blank" style="color: #3b82f6;">data</a> is in the repository - feel free to analyze it yourself or add more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-twenty position-relative mt-50 pb-50 lg-mt-40 lg-pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-five" data-aos="fade-up">
+                    <div class="title-style-three text-center">
+                        <h2 class="main-title mb-30">Check It <span>Yourself</span></h2>
+                        <p class="pt-20 pb-15" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                            Don't trust us? Good. You shouldn't. Everything is public: our code, our data, our methods. You can run our scripts yourself, check our math, verify identities on the blockchain. We're not hiding anything because we have nothing to hide.
+                        </p>
+                    </div>
+                    <div class="row justify-content-center pt-20">
+                        <div class="col-lg-4 col-md-6 mb-20">
+                            <div class="limitation-card text-center">
+                                <h6>Code Repository</h6>
+                                <p><a href="https://github.com/RideMatch1/qubic-anna-lab-public" target="_blank" style="color: #3b82f6;">Public GitHub repository</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-20">
+                            <div class="limitation-card text-center">
+                                <h6>Data Files</h6>
+                                <p>Complete mapping database available in <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/derived" target="_blank" style="color: #3b82f6;">repository</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-20">
+                            <div class="limitation-card text-center">
+                                <h6>On-Chain Verification</h6>
+                                <p>Use <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer RPC</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-20">
+                            <div class="limitation-card text-center">
+                                <h6>Statistical Tests</h6>
+                                <p>All calculations documented in <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/reports" target="_blank" style="color: #3b82f6;">reports</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-20">
+                            <div class="limitation-card text-center">
+                                <h6>Monte Carlo Simulation</h6>
+                                <p><a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/scripts/analysis" target="_blank" style="color: #3b82f6;">Scripts</a> available for reproduction</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-20">
+                            <div class="limitation-card text-center">
+                                <h6>ML Models</h6>
+                                <p>Training <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/scripts/analysis" target="_blank" style="color: #3b82f6;">scripts</a> and <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/derived" target="_blank" style="color: #3b82f6;">data</a> available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-twenty position-relative mt-50 pb-50 lg-mt-40 lg-pb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-five" data-aos="fade-up">
+                    <div class="title-style-three text-center">
+                        <h2 class="main-title mb-30">Explore More <span>Discoveries</span></h2>
+                        <p class="pt-20 pb-15" style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+                            This methodology page explains how we found the identities. Want to see what else we discovered? Check out these pages:
+                        </p>
+                    </div>
+                    <div class="row justify-content-center pt-20">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('visualization') }}" style="color: #1a1a1a; text-decoration: none;">3D Visualization</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Interactive Neuraxon network showing all 23,765 identities in 3D</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('explore') }}" style="color: #1a1a1a; text-decoration: none;">Anna Explorer</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Explore word patterns, sentences, and the 7×7 grid structure</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('ml_position27') }}" style="color: #1a1a1a; text-decoration: none;">ML Results</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Detailed machine learning results for Position 27 prediction</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('grid_structure') }}" style="color: #1a1a1a; text-decoration: none;">Grid Structure</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">7×7 grid analysis showing Column 6 as central hub</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('statistics') }}" style="color: #1a1a1a; text-decoration: none;">Statistics</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Confidence intervals, Monte Carlo simulations, validation</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('discrepancy') }}" style="color: #1a1a1a; text-decoration: none;">Discrepancy</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Analysis of differences between documented and real identities</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('layers') }}" style="color: #1a1a1a; text-decoration: none;">Layers</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Multi-layer identity structure and on-chain verification rates</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-20">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('helix_gates') }}" style="color: #1a1a1a; text-decoration: none;">Helix Gates</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Rotational patterns and geometric structures in the matrix</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

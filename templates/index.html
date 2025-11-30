@@ -1,0 +1,396 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/methodology-images.css') }}?v=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index-fixes.css') }}?v=2">
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-6 col-lg-7 col-md-8">
+                <h1 class="hero-heading">
+                    Decoding the Anna Matrix: <span>23,765 Qubic Identities</span> Discovered
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    We discovered real Qubic blockchain identities hidden in an AI chatbot's messages. Think of it like finding a secret code in a puzzle - we cracked it, and the blockchain proves it's real. 
+                    <strong>{{ "{:,}".format(stats.onchain_verified|int) }} identities ({{ "%.2f"|format(stats.onchain_rate|float) }}%)</strong> exist on-chain and can be verified using Qubic Explorer.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>Important:</strong> We are not affiliated with Qubic. This is independent, non-commercial research using publicly available data. We believe Qubic is an innovative blockchain protocol with unique capabilities, and our goal is to help the community better understand its potential. All our work is done voluntarily and provided free of charge. All methods and data are open for verification.
+                    </p>
+                </div>
+                <ul class="style-none button-group d-flex align-items-center mt-30">
+                    <li class="me-4">
+                        <a href="{{ url_for('visualization') }}" class="demo-btn tran3s" style="background: #3b82f6 !important; color: #ffffff !important; border: 2px solid #3b82f6 !important;">
+                            Explore Visualization
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('methodology') }}" class="demo-btn tran3s" style="background: transparent !important; border: 2px solid #3b82f6 !important; color: #3b82f6 !important;">
+                            Read Methodology
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="illustration-holder">
+        <img src="{{ url_for('static', filename='images/assets/ils_13.svg') }}" alt="" class="main-illustration ms-auto">
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="counter-section-one mt-60 lg-mt-40">
+    <div class="container">
+        <div class="inner-container bg-color">
+            <div class="row justify-content-center">
+                <div class="col-md-3 col-sm-6" data-aos="fade-up">
+                    <div class="counter-block-one text-center mb-20">
+                        <div class="main-count">
+                            <span class="counter" data-target="{{ stats.total_identities|int }}" data-is-integer="true">0</span>
+                        </div>
+                        <p>Qubic Identity<br>Candidates Discovered</p>
+                        <a href="{{ url_for('explore') }}" class="counter-link mt-15">View All Identities →</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="counter-block-one text-center mb-20">
+                        <div class="main-count">
+                            <span class="counter" data-target="{{ "%.2f"|format(stats.onchain_rate|float) }}" data-suffix="%">0</span>
+                        </div>
+                        <p>On-Chain<br>Verification Rate</p>
+                        <a href="https://explorer.qubic.org" target="_blank" class="counter-link mt-15">Verify on Explorer →</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="counter-block-one text-center mb-20">
+                        <div class="main-count">
+                            <span class="counter" data-target="{{ "%.2f"|format(stats.ml_accuracy|float) }}" data-suffix="%">0</span>
+                        </div>
+                        <p>ML Model Accuracy<br>(Position 27)</p>
+                        <a href="{{ url_for('ml_position27') }}" class="counter-link mt-15">View ML Results →</a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="counter-block-one text-center mb-20">
+                        <div class="main-count">
+                            <span class="counter" data-target="{{ "%.1f"|format(stats.improvement_over_baseline|float) }}" data-prefix="+" data-suffix="%">0</span>
+                        </div>
+                        <p>Improvement Over<br>Baseline</p>
+                        <a href="{{ url_for('statistics') }}" class="counter-link mt-15">View Statistics →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="fancy-feature-seventeen position-relative pt-120 mt-100 xl-mt-60 xl-pt-80">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                    <h2 class="main-title mb-40"><span>Research</span> Highlights</h2>
+                    <p class="pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+                        Transparent, reproducible research with full statistical validation and on-chain verification. All methods and data are publicly available.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center pt-20">
+            <div class="col-lg-4 col-md-6 mb-30" data-aos="fade-up">
+                <div class="block-style-twelve mt-30">
+                    <div class="icon d-flex align-items-end">
+                        <i class="fas fa-chart-line" style="font-size: 48px; color: #3b82f6;"></i>
+                    </div>
+                    <h5><a href="{{ url_for('statistics') }}">Statistical Validation</a></h5>
+                    <p>Rigorous statistical testing with confidence intervals, effect sizes, and multiple testing correction. All calculations documented and verifiable.</p>
+                    <a href="{{ url_for('statistics') }}" class="tran3s more-btn">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30" data-aos="fade-up" data-aos-delay="100">
+                <div class="block-style-twelve mt-30 active">
+                    <div class="icon d-flex align-items-end">
+                        <i class="fas fa-network-wired" style="font-size: 48px; color: #3b82f6;"></i>
+                    </div>
+                    <h5><a href="{{ url_for('visualization') }}">3D Visualization</a></h5>
+                    <p>Interactive 3D network showing all discovered identities across multiple frames. Click any node to explore connections and verify on-chain.</p>
+                    <a href="{{ url_for('visualization') }}" class="tran3s more-btn">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-30" data-aos="fade-up" data-aos-delay="200">
+                <div class="block-style-twelve mt-30">
+                    <div class="icon d-flex align-items-end">
+                        <i class="fas fa-shield-alt" style="font-size: 48px; color: #3b82f6;"></i>
+                    </div>
+                    <h5><a href="{{ url_for('methodology') }}">On-Chain Verification</a></h5>
+                    <p>{{ "{:,}".format(stats.onchain_verified|int) }} identities ({{ "%.2f"|format(stats.onchain_rate|float) }}%) verified on-chain. Verify yourself using <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer</a>.</p>
+                    <a href="{{ url_for('methodology') }}" class="tran3s more-btn">
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Transparency Section -->
+<div class="fancy-feature-seventeen position-relative mt-80 pb-60 lg-mt-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-five" data-aos="fade-up">
+                    <div class="title-style-three text-center">
+                        <h2 class="main-title mb-40">Check It <span>Yourself</span></h2>
+                        <p class="pt-10 pb-30" style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+                            Don't trust us? Good. You shouldn't. Everything is public: our code, our data, our methods. You can run our scripts yourself, check our math, verify identities on the blockchain. We're not hiding anything because we have nothing to hide.
+                        </p>
+                    </div>
+                    <div class="row justify-content-center pt-10">
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Code Repository</h6>
+                                <p><a href="https://github.com/RideMatch1/qubic-anna-lab-public" target="_blank" style="color: #3b82f6;">Public GitHub repository</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Data Files</h6>
+                                <p>Complete mapping database available in <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/derived" target="_blank" style="color: #3b82f6;">repository</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>On-Chain Verification</h6>
+                                <p>Use <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer RPC</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Statistical Tests</h6>
+                                <p>All calculations documented in <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/reports" target="_blank" style="color: #3b82f6;">reports</a></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Monte Carlo Simulation</h6>
+                                <p><a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/scripts/analysis" target="_blank" style="color: #3b82f6;">Scripts</a> available for reproduction</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>ML Models</h6>
+                                <p>Training <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/scripts/analysis" target="_blank" style="color: #3b82f6;">scripts</a> and <a href="https://github.com/RideMatch1/qubic-anna-lab-public/tree/main/outputs/derived" target="_blank" style="color: #3b82f6;">data</a> available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- What This Means Section -->
+<div class="fancy-feature-seventeen position-relative mt-80 pb-60 lg-mt-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-five" data-aos="fade-up">
+                    <div class="title-style-three text-center">
+                        <h2 class="main-title mb-40">What This <span>Means</span></h2>
+                        <p class="pt-10 pb-30" style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+                            This discovery proves there's a hidden pattern in how these messages are structured. The evidence is clear: real blockchain addresses, machine learning validation, and statistical proof.
+                        </p>
+                    </div>
+                    <div class="row justify-content-center pt-10">
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Real Blockchain Addresses</h6>
+                                <p>{{ "{:,}".format(stats.onchain_verified|int) }} identities exist on-chain. Verify using <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer</a>.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Machine Learning Proves It</h6>
+                                <p>42.69% accuracy - 11x better than random (3.85%). The pattern is real and learnable.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 mb-25">
+                            <div class="limitation-card text-center">
+                                <h6>Statistically Validated</h6>
+                                <p>10,000 random grids tested = zero valid identities. The math checks out.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Explore More Section -->
+<div class="fancy-feature-twenty position-relative mt-80 pb-60 lg-mt-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-five" data-aos="fade-up">
+                    <div class="title-style-three text-center">
+                        <h2 class="main-title mb-40">Explore More <span>Discoveries</span></h2>
+                        <p class="pt-10 pb-30" style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.8;">
+                            This is just the beginning. We discovered much more - word patterns, grid structures, statistical anomalies, and evolutionary signatures. Dive deeper:
+                        </p>
+                    </div>
+                    <div class="row justify-content-center pt-10">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('visualization') }}" style="color: #1a1a1a; text-decoration: none;">3D Visualization</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Interactive Neuraxon network showing all discovered identities in 3D</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('explore') }}" style="color: #1a1a1a; text-decoration: none;">Anna Explorer</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Explore word patterns, sentences, and the 7×7 grid structure</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('ml_position27') }}" style="color: #1a1a1a; text-decoration: none;">ML Results</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Detailed machine learning results for Position 27 prediction</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('grid_structure') }}" style="color: #1a1a1a; text-decoration: none;">Grid Structure</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">7×7 grid analysis showing Column 6 as central hub</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('statistics') }}" style="color: #1a1a1a; text-decoration: none;">Statistics</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Confidence intervals, Monte Carlo simulations, validation</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('discrepancy') }}" style="color: #1a1a1a; text-decoration: none;">Discrepancy Analysis</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Character distribution and position differences</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('layers') }}" style="color: #1a1a1a; text-decoration: none;">Layer Analysis</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Multi-layer structure and on-chain verification rates</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-25">
+                            <div class="limitation-card text-center" style="height: 100%;">
+                                <h6><a href="{{ url_for('methodology') }}" style="color: #1a1a1a; text-decoration: none;">Methodology</a></h6>
+                                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Complete research methodology and transparency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function() {
+    'use strict';
+    
+    function animateCounter(el) {
+        var target = parseFloat(el.getAttribute('data-target'));
+        var prefix = el.getAttribute('data-prefix') || '';
+        var suffix = el.getAttribute('data-suffix') || '';
+        var isInteger = el.getAttribute('data-is-integer') === 'true';
+        var duration = 1500;
+        var startTime = null;
+        var startValue = 0;
+        
+        function updateCounter(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / duration, 1);
+            var easeOutQuart = 1 - Math.pow(1 - progress, 4);
+            var current = startValue + (target - startValue) * easeOutQuart;
+            var displayValue;
+            
+            if (isInteger || target % 1 === 0) {
+                displayValue = Math.floor(current).toLocaleString('en-US');
+            } else {
+                var decimals = target.toString().split('.')[1] ? target.toString().split('.')[1].length : 2;
+                displayValue = current.toFixed(decimals);
+            }
+            
+            el.textContent = prefix + displayValue + suffix;
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            } else {
+                if (isInteger || target % 1 === 0) {
+                    el.textContent = prefix + Math.floor(target).toLocaleString('en-US') + suffix;
+                } else {
+                    var decimals = target.toString().split('.')[1] ? target.toString().split('.')[1].length : 2;
+                    el.textContent = prefix + target.toFixed(decimals) + suffix;
+                }
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    }
+    
+    function initCounters() {
+        var counterSection = document.querySelector('.counter-section-one');
+        if (!counterSection) return;
+        
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var counters = document.querySelectorAll('.counter');
+                        counters.forEach(function(counter) {
+                            if (!counter.dataset.animated) {
+                                counter.dataset.animated = 'true';
+                                animateCounter(counter);
+                            }
+                        });
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(counterSection);
+        } else {
+            setTimeout(function() {
+                var counters = document.querySelectorAll('.counter');
+                counters.forEach(function(counter) {
+                    if (!counter.dataset.animated) {
+                        counter.dataset.animated = 'true';
+                        animateCounter(counter);
+                    }
+                });
+            }, 500);
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCounters);
+    } else {
+        initCounters();
+    }
+})();
+</script>
+{% endblock %}
+

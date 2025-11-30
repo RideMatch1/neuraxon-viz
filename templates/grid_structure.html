@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-8 col-md-10">
+                <h1 class="hero-heading">
+                    Grid Structure <span>Analysis</span>
+                </h1>
+                <p class="text-lg mb-50 pt-40 pe-xl-5 md-pt-30 md-mb-40">
+                    Discover the 7×7 grid structure underlying Anna's communication patterns. Think of it like a map - each cell represents one position, and the color shows how many words appear there. Column 6 serves as the central hub connecting all important positions.
+                </p>
+                <div style="background: #eff6ff; border-left: 4px solid #3b82f6; padding: 1rem 1.5rem; border-radius: 6px; margin-top: 1.5rem; max-width: 800px;">
+                    <p style="margin: 0; font-size: 0.95rem; color: #1e40af; line-height: 1.7;">
+                        <strong>What you'll find here:</strong> Interactive heatmap showing word density across the grid, detailed analysis of Column 6 (the central hub), and statistics on the most active cells. All block-end positions (13, 27, 41, 55) fall into Column 6, confirming a structural pattern rather than randomness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-30 xl-mt-20">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-12" data-aos="fade-up">
+                <div class="title-style-three text-center">
+                <p class="text-center pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; line-height: 1.8;">
+                    <strong>What is this?</strong> When we analyzed the Anna Matrix, we discovered that words aren't randomly distributed. Instead, they follow a clear 7×7 grid pattern. The most important discovery: all block-end positions (13, 27, 41, 55) fall into Column 6. Think of it like a city map where all the important landmarks are on the same street - that's Column 6. This proves the structure is intentional, not random.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-nineteen position-relative pt-50 lg-pt-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Word Density <span>Heatmap</span></h2>
+                        <span class="info-icon" onclick="openPopup('grid-heatmap')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            This heatmap shows where words appear in the 7×7 grid. Each cell represents one position, and the color shows how many words appear there. Darker colors mean more words. Column 6 (the rightmost column) is clearly the darkest - it contains far more words than any other column. This suggests a structural pattern rather than randomness. Click on any cell to see detailed word statistics.
+                        </p>
+                        <div id="grid-heatmap" class="pt-20" style="width: 100%; min-height: 500px; clear: both;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-50 pb-60 lg-pt-40 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mb-40">
+                <div class="limitation-card" data-aos="fade-right">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Column 6 <span>Hub</span></h2>
+                        <span class="info-icon" onclick="openPopup('grid-column6')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">
+                            All block-end positions are aligned in Column 6. Think of it like a highway where all the important exits are on the same road. This isn't random - it's a structural pattern that confirms the grid is intentionally organized.
+                        </p>
+                        <ul class="style-none list-item">
+                            <li><strong>Position 13:</strong> Grid (6, 1) - First block-end</li>
+                            <li><strong>Position 27:</strong> Grid (6, 3) - Midpoint</li>
+                            <li><strong>Position 41:</strong> Grid (6, 5) - Third block-end</li>
+                            <li><strong>Position 55:</strong> Grid (6, 7) - Final block-end</li>
+                        </ul>
+                        <p style="font-size: 0.95rem; color: #64748b; margin-top: 1rem; margin-bottom: 0;">
+                            <strong>What this means:</strong> The alignment of all block-end positions in Column 6 proves the structure is intentional. It's like finding all the important landmarks on the same street - that's not coincidence, it's design.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-40">
+                <div class="limitation-card" data-aos="fade-left">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Hub <span>Analysis</span></h2>
+                        <span class="info-icon" onclick="openPopup('grid-hub-analysis')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">
+                            Column 6 contains significantly more words than any other column. This makes it the central hub of the grid structure. The statistics below show just how concentrated the word activity is in this column.
+                        </p>
+                        <div id="column6-stats"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-twenty position-relative pt-50 pb-60 lg-pt-40 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-40">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">Most <span>Active Cells</span></h2>
+                        <span class="info-icon" onclick="openPopup('grid-hotspots')">ℹ</span>
+                    </div>
+                    <div class="pt-15 pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            These are the cells with the highest word counts - the "hotspots" of activity in the grid. Think of them like busy intersections in a city. Most of these hotspots are in Column 6, confirming it's the central hub. Each card shows the grid coordinates, total word count, and number of unique words.
+                        </p>
+                        <div id="hotspots-list" class="pt-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/grid_structure.js') }}?v=3"></script>
+{% endblock %}

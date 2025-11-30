@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/neuraxon.css') }}?v=14">
+{% endblock %}
+
+{% block content %}
+<div class="hero-banner-five">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="hero-heading">
+                    Interactive <span>3D Visualization</span>
+                </h1>
+                <p class="text-lg mb-15 pt-10 md-pt-5 md-mb-10">
+                    This interactive 3D visualization shows {{ "{:,}".format(stats.total_identities|int) }} Qubic identities discovered in the Anna Matrix. Each colored dot represents one identity, and the lines between them show connections. You can explore all identities across multiple frames, with 512 identities per frame. All data is validated on-chain and documented in our <a href="https://github.com/RideMatch1/qubic-anna-lab-public" target="_blank" style="color: #3b82f6;">public repository</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-60 pb-40 lg-mt-40 lg-pb-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="block-style-two" data-aos="fade-up">
+                    <div class="title-style-three" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <h2 class="main-title" style="margin: 0;">What You're <span>Looking At</span></h2>
+                        <span class="info-icon" onclick="openPopup('what-you-see')">ℹ</span>
+                    </div>
+                    <div class="pt-20 pb-25 lg-pb-20">
+                        <p style="font-size: 1.05rem; line-height: 1.8; color: #334155; margin-bottom: 1.5rem;">
+                            Imagine you're looking at a map of a city. Instead of streets and buildings, you're seeing Qubic identities and how they connect to each other. Each colored dot (we call it a "neuron") is one real Qubic identity we found hidden in the Anna Matrix. The lines between dots show connections - thicker orange lines mean stronger connections, thinner gray lines mean weaker ones.
+                        </p>
+                        <h5 style="margin-top: 1.5rem; margin-bottom: 1rem;">What the Colors Mean:</h5>
+                        <p style="font-size: 0.95rem; color: #64748b; margin-bottom: 1rem;">Colors are determined by neuron state. All displayed neurons are input neurons (0-511) from the Neuraxon network:</p>
+                        <ul class="style-none list-item color-rev">
+                            <li><strong style="color: #ef4444;">Red dots:</strong> Neurons with state +1 (excitatory)</li>
+                            <li><strong style="color: #3b82f6;">Blue dots:</strong> Neurons with state -1 (inhibitory)</li>
+                            <li><strong style="color: #f97316;">Orange dots:</strong> Neurons with state 0 (neutral)</li>
+                        </ul>
+                        <p style="font-size: 0.9rem; color: #64748b; margin-top: 1rem; font-style: italic;">Note: This visualization shows only input neurons (0-511) from the Neuraxon network. Each neuron represents one Qubic identity discovered in the Anna Matrix. The state is calculated from the Real ID using trinary encoding.</p>
+                        <p style="font-size: 0.95rem; color: #64748b; margin-top: 1.5rem; font-style: italic;">
+                            Click the ℹ icon above for detailed technical explanations and scientific methodology.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative pt-40 pb-60 lg-pt-30 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="title-style-three text-center mb-40">
+                    <h2 class="main-title mb-20">How to Use This <span>Visualization</span></h2>
+                    <p class="pt-10 pb-20" style="max-width: 800px; margin: 0 auto; font-size: 1.05rem; line-height: 1.7;">
+                        Everything you need to know to explore the 3D network. Simple steps for beginners, powerful tools for experts.
+                    </p>
+                </div>
+                <div class="row justify-content-center pt-10">
+                    <div class="col-lg-4 col-md-6 mb-25">
+                        <div class="limitation-card text-center">
+                            <h6>Click Any Dot</h6>
+                            <p>Click any colored dot in the 3D graph to see its full details in the tables below. The page automatically scrolls to show you the information.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-25">
+                        <div class="limitation-card text-center">
+                            <h6>Move Through Frames</h6>
+                            <p>Use the timeline slider at the bottom to jump between frames. Each frame contains up to 512 identities, covering all {{ "{:,}".format(stats.total_identities|int) }} identities across multiple frames.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-25">
+                        <div class="limitation-card text-center">
+                            <h6>Search for Identity</h6>
+                            <p>Type an ID number (0-511) in the search box and click "Locate neuron". The visualization jumps directly to that identity.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-25">
+                        <div class="limitation-card text-center">
+                            <h6>Get Detailed Info</h6>
+                            <p>Click the ℹ info icons next to section titles for detailed technical explanations. These popups contain in-depth information for researchers.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-25">
+                        <div class="limitation-card text-center">
+                            <h6>Copy Data</h6>
+                            <p>Click on Real ID, Seed, or Hash values in the tables to copy them to your clipboard automatically.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-25">
+                        <div class="limitation-card text-center">
+                            <h6>Verify on Blockchain</h6>
+                            <p>Click the blue "Check" button next to any Real ID to open <a href="https://explorer.qubic.org" target="_blank" style="color: #3b82f6;">Qubic Explorer</a> and see the on-chain data.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-seventeen position-relative mt-40 xl-mt-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="neuraxon-plot" style="width: 100%; height: 800px; margin: 20px 0; min-height: 800px; position: relative; background: #f9fafb;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="fancy-feature-eighteen position-relative pt-60 pb-80 lg-pt-40 md-pt-30 xl-pb-60 lg-pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div id="data-tables-container"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+<script src="{{ url_for('static', filename='js/neuraxon/viz.js') }}?v=13"></script>
+<script src="{{ url_for('static', filename='js/neuraxon/tables.js') }}?v=13"></script>
+<script src="{{ url_for('static', filename='js/neuraxon/timeline.js') }}?v=13"></script>
+<script src="{{ url_for('static', filename='js/neuraxon/interactions.js') }}?v=13"></script>
+<script>
+(function() {
+    'use strict';
+    
+    window.FRAME_DATA = [];
+    window.currentFrameIndex = 0;
+    
+    function showError(message) {
+        const plotEl = document.getElementById('neuraxon-plot');
+        if (plotEl) {
+            const errorP = document.createElement('p');
+            errorP.style.cssText = 'text-align: center; padding: 40px; color: #ef4444;';
+            errorP.textContent = message;
+            plotEl.innerHTML = '';
+            plotEl.appendChild(errorP);
+        }
+    }
+    
+    function initializeVisualization(frames) {
+        try {
+            if (!frames || frames.length === 0) {
+                showError('No frame data available.');
+                return;
+            }
+            
+            window.FRAME_DATA = frames;
+            window.currentFrameIndex = 0;
+            
+            if (typeof Plotly === 'undefined') {
+                showError('Plotly library not loaded. Please refresh the page.');
+                return;
+            }
+            
+            if (!window.renderFrame3D) {
+                showError('Visualization module not loaded. Please refresh the page.');
+                return;
+            }
+            
+            window.renderFrame3D(0, window.FRAME_DATA);
+            
+            if (window.renderTables) {
+                window.renderTables(0, window.FRAME_DATA);
+            }
+            
+            if (frames.length > 1 && window.setupTimeline) {
+                window.setupTimeline(frames);
+            }
+        } catch (error) {
+            console.error('Error initializing visualization:', error);
+            showError('Failed to initialize visualization: ' + error.message);
+        }
+    }
+    
+    function loadVisualizationData() {
+        fetch('/api/neuraxon-data')
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error('HTTP ' + response.status);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data.error) {
+                    showError('Network data not available: ' + (data.error || 'Unknown error'));
+                    return;
+                }
+                
+                const frames = data.metadata?.frames || [];
+                
+                setTimeout(function() {
+                    initializeVisualization(frames);
+                }, 500);
+            })
+            .catch(function(error) {
+                console.error('Error loading data:', error);
+                showError('Failed to load visualization data.');
+            });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadVisualizationData);
+    } else {
+        loadVisualizationData();
+    }
+})();
+</script>
+{% endblock %}
